@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+
+Esp_motor_driver/HallEffect/.vs/HallEffect/v16/
