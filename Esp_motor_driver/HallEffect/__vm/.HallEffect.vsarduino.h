@@ -51,7 +51,7 @@
 #define _Lockit
 #define __CLR_OR_THIS_CALL
 #define C4005
-#define _NEW
+//#define _NEW
 
 typedef bool _Bool;
 typedef int _read;
@@ -79,7 +79,8 @@ extern "C" void __cxa_pure_virtual() {;}
 
 typedef long __INTPTR_TYPE__ ;
 typedef long __UINTPTR_TYPE__ ;
-typedef long __SIZE_TYPE__ 	;
+//typedef long __SIZE_TYPE__ 	;
+#define __SIZE_TYPE__ unsigned int
 typedef long __PTRDIFF_TYPE__;
 
 typedef long pthread_t;
@@ -89,7 +90,10 @@ typedef long pthread_mutex_t;
 typedef long pthread_mutex_t;
 typedef long pthread_cond_t;
 
+#define __CHAR_BIT__ 1
 
+// Ensure ArduinoJSON Lib Intellisense works correctly
+#define ARDUINOJSON_ENABLE_STD_STREAM 0
 
 #include "arduino.h"
 #include <pins_arduino.h> 
@@ -99,6 +103,10 @@ typedef long pthread_cond_t;
 
 #define ESP_LOGI(tag, ...)
 
+// Read Value from Register
+#define READ_PERI_REG(addr)
+// Write Value to Register
+#define WRITE_PERI_REG(addr,val)
 #include "HallEffect.ino"
 #endif
 #endif
